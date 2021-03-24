@@ -9,17 +9,11 @@ const logger = require("morgan");
 const path = require("path");
 
 mongoose
-<<<<<<< HEAD
-  .connect('mongodb://localhost/starter-code', {useNewUrlParser: true}) 
-  .then(x => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
-=======
   .connect("mongodb://localhost/starter-code", { useNewUrlParser: true })
   .then((x) => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
     );
->>>>>>> upstream/master
   })
   .catch((err) => {
     console.error("Error connecting to mongo", err);
@@ -51,14 +45,9 @@ app.locals.title = "Express - Generated with IronGenerator";
 const index = require("./routes/index");
 app.use("/", index);
 
-<<<<<<< HEAD
-const celebrities = require('./routes/celebrities');
-app.use('/', celebrities);
-=======
 // require the routes from module/file
 const celebrityRoutes = require("./routes/celebrity.routes");
 // tell app to use the routes found in the module
 app.use("/", celebrityRoutes);
->>>>>>> upstream/master
 
 module.exports = app;
